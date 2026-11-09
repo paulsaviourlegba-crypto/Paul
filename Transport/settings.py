@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-e%dihtl&@un%$-v^@i70-n@aj4w(o-4vv_qr1vf!hji%@pyt98
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['Paul-z0o.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -134,5 +134,5 @@ LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/login/"
 
 CSRF_TRUSTED_ORIGINS = [
-    '*',
+    'https://Paul-z0o.onrender.com',
 ]
