@@ -133,6 +133,8 @@ LOGIN_URL = "/login/"
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/login/"
 
-CSRF_TRUSTED_ORIGIN = [
+CSRF_TRUSTED_ORIGINS = [
     'https://Paul-zu0o.onrender.com',
 ]
+
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", 'https')
