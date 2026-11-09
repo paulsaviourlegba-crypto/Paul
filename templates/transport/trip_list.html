@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block content %}
+<div class="d-flex justify-content-between mb-3"><h2>Transportation Records</h2><a class="btn btn-primary" href="{% url 'Account:trip_add' %}">Add Trip</a></div>
+<div class="table-responsive"><table class="table table-striped"><tr><th>Date</th><th>Truck</th><th>Driver</th><th>Goods</th><th>From</th><th>To</th><th>Charge</th><th>Paid</th><th>Balance</th><th>Actions</th></tr>
+{% for x in items %}<tr><td>{{ x.trip_date }}</td><td>{{ x.truck }}</td><td>{{ x.driver }}</td><td>{{ x.goods }} ({{ x.quantity }})</td><td>{{ x.origin }}</td><td>{{ x.destination }}</td><td>₦{{ x.transport_charge }}</td><td>₦{{ x.amount_paid }}</td><td>₦{{ x.balance|floatformat:2 }}</td><td><a href="{% url 'trip_edit' x.pk %}">Edit</a> | <a class="text-danger" href="{% url 'trip_delete' x.pk %}">Delete</a></td></tr>{% empty %}<tr><td colspan="10">No trips recorded.</td></tr>{% endfor %}</table></div>{% endblock %}

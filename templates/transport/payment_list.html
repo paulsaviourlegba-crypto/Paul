@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block content %}
+<div class="d-flex justify-content-between mb-3"><h2>Payment Records</h2><a class="btn btn-primary" href="{% url 'Account:payment_add' %}">Record Payment</a></div>
+<div class="table-responsive"><table class="table table-striped"><tr><th>Date</th><th>Trip</th><th>Amount</th><th>Method</th><th>Reference</th></tr>
+{% for x in items %}<tr><td>{{ x.payment_date }}</td><td>{{ x.trip }}</td><td>₦{{ x.amount }}</td><td>{{ x.method }}</td><td>{{ x.reference }}</td></tr>{% empty %}<tr><td colspan="5">No payments recorded.</td></tr>{% endfor %}</table></div>{% endblock %}

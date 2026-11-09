@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block content %}
+<div class="d-flex justify-content-between mb-3"><h2>Driver Records</h2><a class="btn btn-primary" href="{% url 'Account:driver_add' %}">Add Driver</a></div>
+<div class="table-responsive"><table class="table table-striped"><tr><th>Name</th><th>Phone</th><th>License Number</th><th>Address</th><th>Actions</th></tr>
+{% for x in items %}<tr><td>{{ x.full_name }}</td><td>{{ x.phone }}</td><td>{{ x.license_number }}</td><td>{{ x.address }}</td><td><a href="{% url 'Account:driver_edit' x.pk %}">Edit</a> | <a class="text-danger" href="{% url 'driver_delete' x.pk %}">Delete</a></td></tr>{% empty %}<tr><td colspan="5">No drivers added.</td></tr>{% endfor %}</table></div>{% endblock %}

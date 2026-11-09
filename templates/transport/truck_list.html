@@ -1,0 +1,4 @@
+{% extends 'base.html' %}{% block content %}
+<div class="d-flex justify-content-between mb-3"><h2>Truck Records</h2><a class="btn btn-primary" href="{% url 'Account:truck_add' %}">Add Truck</a></div>
+<div class="table-responsive"><table class="table table-striped"><tr><th>Plate Number</th><th>Truck</th><th>Capacity</th><th>Status</th><th>Actions</th></tr>
+{% for x in items %}<tr><td>{{ x.plate_number }}</td><td>{{ x.truck_name }}</td><td>{{ x.capacity }}</td><td>{{ x.status }}</td><td><a href="{% url 'Account:truck_edit' x.pk %}">Edit</a> | <a class="text-danger" href="{% url 'Account:truck_delete' x.pk %}">Delete</a></td></tr>{% empty %}<tr><td colspan="5">No trucks added.</td></tr>{% endfor %}</table></div>{% endblock %}
